@@ -6,7 +6,7 @@ import (
 )
 
 type internalPalettedImage struct {
-	palimg PalImg
+	palimgcore PalettedImageCore
 	rectangle image.Rectangle
 	palette []color.Color
 }
@@ -40,12 +40,12 @@ func (receiver internalPalettedImage) ColorIndexAt(x, y int) uint8 {
 		return 0
 	}
 
-	var palimg PalImg = receiver.palimg
-	if nil == palimg {
+	var palimgcore PalettedImageCore = receiver.palimgcore
+	if nil == palimgcore {
 		return 0
 	}
 
-	return palimg.ColorIndexAt(x,y)
+	return palimgcore.ColorIndexAt(x,y)
 }
 
 func (receiver internalPalettedImage) ColorModel() color.Model {
