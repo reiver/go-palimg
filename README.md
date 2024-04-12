@@ -1,6 +1,6 @@
 # go-palimg
 
-Package **palimg** provides tool for working with and creating **paletted-images**, for the Go programming language.
+Package **palimg** provides tools for working with and creating **paletted-images**, for the Go programming language.
 
 ## Documention
 
