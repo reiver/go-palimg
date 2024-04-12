@@ -1,20 +1,20 @@
 package palimg
 
-func Core(width int, height int, data ...uint8) PalettedImageCore {
-	return internalCore{
+func SliceCore(width int, height int, data ...uint8) PalettedImageCore {
+	return internalSliceCore{
 		data:data,
 		width:width,
 		height:height,
 	}
 }
 
-type internalCore struct {
+type internalSliceCore struct {
 	data []uint8
 	width int
 	height int
 }
 
-func (receiver internalCore) ColorIndexAt(x int, y int) uint8 {
+func (receiver internalSliceCore) ColorIndexAt(x int, y int) uint8 {
 	var length int = len(receiver.data)
 	if length <= 0 {
 		return 0
